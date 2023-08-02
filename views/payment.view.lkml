@@ -11,10 +11,6 @@ view: payment {
     type: string
     sql: ${TABLE}.advance_payment ;;
   }
-  dimension: amount {
-    type: string
-    sql: ${TABLE}.amount ;;
-  }
   dimension: calculated_status_id {
     type: number
     sql: ${TABLE}.calculated_status_id ;;
@@ -102,5 +98,9 @@ view: payment {
   measure: count {
     type: count
     drill_fields: [payment_id, name, user.user_id, payment_info.count]
+  }
+  measure: amount {
+    type: sum
+    sql: ${TABLE}.amount ;;
   }
 }
