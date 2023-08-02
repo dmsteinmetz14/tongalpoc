@@ -26,6 +26,11 @@ explore: user {
     relationship:  one_to_one
     sql_on: ${user.user_id} = ${profile.user_id} ;;
   }
+  join: country {
+    relationship: many_to_one
+    sql_on: ${profile.country_id} = ${country.id} ;;
+
+  }
   join: submission_contributor {
     relationship:  one_to_many
     sql_on:  ${user.user_id} = ${submission_contributor.user_id} ;;
