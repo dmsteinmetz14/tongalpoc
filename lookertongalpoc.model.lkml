@@ -52,6 +52,10 @@ explore: submission_attributes {
     relationship: many_to_one
     sql_on:${submission_attributes.submission_id} = ${submission_counters.submission_id}  ;;
   }
+  join: profile {
+    relationship: one_to_many
+    sql_on: ${profile.user_id} = ${submission_contributor.user_id};;
+  }
 }
 
 explore: greenlights {}
