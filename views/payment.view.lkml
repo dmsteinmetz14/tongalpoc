@@ -43,7 +43,7 @@ view: payment {
   }
   dimension_group: date_finished {
     type: time
-    timeframes: [raw, time, date, week, month, quarter, year]
+    timeframes: [raw, time, date, week, month, month_name, quarter, year]
     sql: ${TABLE}.date_finished ;;
   }
   dimension: description {
