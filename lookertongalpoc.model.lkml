@@ -32,10 +32,14 @@ explore: user {
   }
 }
 
-explore: project_attribute {
-  join: project_view {
+explore: contest {
+  join: project_attribute {
+    relationship: one_to_many
+    sql_on: ${contest.contest_id} = ${project_attribute.contest_id} ;;
+  }
+  join: contest_submission {
     relationship: many_to_many
-    sql_on: ${project_attribute.project_id} = ${project_view.id} ;;
+    sql_on: ${contest.contest_id} = ${contest_submission.id} ;;
   }
 }
 
