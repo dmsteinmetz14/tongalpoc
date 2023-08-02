@@ -164,7 +164,7 @@ view: contest {
   }
   dimension_group: start {
     type: time
-    timeframes: [raw, time, date, week, month, quarter, year]
+    timeframes: [raw, time, date, week, month, month_name, quarter, year]
     sql: ${TABLE}.start_date ;;
   }
   dimension: submitted {
