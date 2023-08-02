@@ -43,6 +43,17 @@ explore: contest {
   }
 }
 
+explore: submission_attributes {
+  join: submission_contributor {
+    relationship: many_to_one
+    sql_on: ${submission_attributes.submission_id} = ${submission_contributor.submission_id} ;;
+  }
+  join: submission_counters {
+    relationship: many_to_one
+    sql_on:${submission_attributes.submission_id} = ${submission_counters.submission_id}  ;;
+  }
+}
+
 
 # # Select the views that should be a part of this model,
 # # and define the joins that connect them together.
