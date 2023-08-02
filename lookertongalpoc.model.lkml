@@ -32,7 +32,12 @@ explore: user {
   }
 }
 
-explore: project_attribute {}
+explore: project_attribute {
+  join: project_view {
+    relationship: many_to_many
+    sql_on: ${project_attribute.project_id} = ${project_view.id} ;;
+  }
+}
 
 
 # # Select the views that should be a part of this model,
