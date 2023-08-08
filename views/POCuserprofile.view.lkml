@@ -59,7 +59,7 @@ view: POCuserprofile {
       p.city,
       p.Preffered_payment_method_id,
       p.user_profile_last_updated_date
-  FROM profile p
+  FROM profileinfo p
     LEFT JOIN user u
       ON p.user_id = u.user_id
     LEFT JOIN country c
@@ -126,6 +126,12 @@ view: POCuserprofile {
     type: string
     sql: ${TABLE}.user_profile_last_updated_date ;;
   }
+
+  measure: user_count {
+    type: count_distinct
+    sql: ${TABLE}.user_id ;;
+  }
+
   # # Define your dimensions and measures here, like this:
   # dimension: user_id {
   #   description: "Unique ID for each user that has ordered"
