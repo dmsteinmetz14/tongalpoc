@@ -44,7 +44,7 @@ view: POCuserprofile {
     )
 
     SELECT
-      u.user_id
+      u.user_id,
       u.email_address,
       u.user_alias,
       u.active,
