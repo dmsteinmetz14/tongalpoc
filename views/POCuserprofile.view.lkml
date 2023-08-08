@@ -48,6 +48,7 @@ view: userprofile {
       u.email_address,
       u.user_alias,
       u.active,
+      u.age_tier
       u.universal_id,
       c.country_id,
       c.country_name,
@@ -79,6 +80,11 @@ view: userprofile {
   dimension: user_alias {
     type: string
     sql: ${TABLE}.user_alias ;;
+  }
+
+  dimension: age_tier {
+    type: string
+    sql: ${TABLE}.age_tier ;;
   }
 
   dimension: active {
