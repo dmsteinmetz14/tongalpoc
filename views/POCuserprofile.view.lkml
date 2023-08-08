@@ -48,7 +48,7 @@ view: POCuserprofile {
       u.email_address,
       u.user_alias,
       u.active,
-      u.age_tier
+      u.age_tier,
       u.universal_id,
       c.country_id,
       c.country_name,
