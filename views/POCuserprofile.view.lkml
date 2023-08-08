@@ -10,6 +10,14 @@ view: userprofile {
       last_name,
       first_name,
       birthday,
+      CASE
+        WHEN (LEFT(birthday,4) + 17) >= 2022 THEN "11-17"
+        WHEN (LEFT(birthday,4) + 24) >= 2022 THEN "18-24"
+        WHEN (LEFT(birthday,4) + 34) >= 2022 THEN "25-34"
+        WHEN (LEFT(birthday,4) + 44) >= 2022 THEN "35-44"
+        WHEN (LEFT(birthday,4) + 24) >= 2022 THEN "45-54"
+        ELSE "60+"
+        END  as age_tier,
       country_id,
       state_province,
       city,
