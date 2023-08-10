@@ -42,6 +42,14 @@ view: POCuserprofile {
       active,
       universal_id
     FROM tongal.user
+    ),
+
+    with submissions AS
+    (SELECT
+      member_id as user_id,
+      COUNT(id) as submissions
+    FROM tongal.contest_submission
+    GROUP BY user_id
     )
 
     SELECT
@@ -61,11 +69,14 @@ view: POCuserprofile {
       p.city,
       p.Preffered_payment_method_id,
       p.user_profile_last_updated_date
+      s.submissions
   FROM profileinfo p
     LEFT JOIN user u
       ON p.user_id = u.user_id
     LEFT JOIN country c
       ON p.country_id = c.country_id
+    LEFT JOIN submissions s
+      ON p.user_id = s.user_id
     ;;
   }
 
@@ -139,6 +150,12 @@ view: POCuserprofile {
   measure: user_count {
     type: count_distinct
     sql: ${TABLE}.user_id ;;
+  }
+
+  measure: submissions {
+    type: sum
+    sql: ${TABLE}.submissions ;;
+
   }
 
   # # Define your dimensions and measures here, like this:
