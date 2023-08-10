@@ -122,8 +122,9 @@ view: POCuserprofile {
     sql: ${TABLE}.Preffered_payment_method_id ;;
   }
 
-  dimension: user_profile_last_updated_date {
-    type: string
+  dimension_group: user_profile_last_updated_date {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.user_profile_last_updated_date ;;
   }
 
