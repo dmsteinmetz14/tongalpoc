@@ -54,7 +54,7 @@ view: POCuserprofile {
       c.country_name,
       p.last_name,
       p.first_name,
-      p.created
+      p.created,
       p.birthday,
       p.age_tier,
       p.state_province,
