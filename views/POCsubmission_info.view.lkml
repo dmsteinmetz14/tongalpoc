@@ -50,12 +50,12 @@ derived_table: {
     sa.submission_id,
     sa.submission_attribute_id,
     sa.list,
-    cs.submission_author_id,
-    cs.contest_phase_id,
-    cs.submitted,
-    cs.submit_date,
-    cs.number_of_views,
-    cs.file_type
+    sa.submission_author_id,
+    sa.contest_phase_id,
+    sa.submitted,
+    sa.submit_date,
+    sa.number_of_views,
+    sa.file_type
   FROM
     item_attribute ia
       LEFT JOIN item_attribute_type iat
