@@ -43,19 +43,7 @@ derived_table: {
   )
 
   SELECT
-    ia.attribute_id,
-    ia.attr_value,
-    iat.control_type,
-    iat.attr_name,
-    sa.submission_id,
-    sa.submission_attribute_id,
-    sa.list,
-    sa.cs.submission_author_id,
-    sa.cs.contest_phase_id,
-    cs.submitted,
-    cs.submit_date,
-    cs.number_of_views,
-    cs.file_type
+    *
   FROM
     item_attribute ia
       LEFT JOIN item_attribute_type iat
