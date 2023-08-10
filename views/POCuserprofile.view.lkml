@@ -9,7 +9,7 @@ view: POCuserprofile {
       user_id,
       last_name,
       first_name,
-      created,
+      created_at,
       birthday,
       CASE
         WHEN (LEFT(birthday,4) + 17) >= 2022 THEN "11-17"
@@ -54,7 +54,7 @@ view: POCuserprofile {
       c.country_name,
       p.last_name,
       p.first_name,
-      p.created,
+      p.created_at,
       p.birthday,
       p.age_tier,
       p.state_province,
