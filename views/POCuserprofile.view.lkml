@@ -44,7 +44,7 @@ view: POCuserprofile {
     FROM tongal.user
     ),
 
-    with submissions AS
+    submissions AS
     (SELECT
       member_id as user_id,
       COUNT(id) as submissions
