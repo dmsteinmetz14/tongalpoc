@@ -47,17 +47,17 @@ FROM users u
 
   measure: users {
     type:  sum
-    sql: ${users} ;;
+    sql: ${TABLE}.users ;;
   }
 
   measure: submissions {
     type:  sum
-    sql: ${submissions} ;;
+    sql: ${TABLE}.submissions ;;
   }
 
   measure: users_with_submissions {
     type:  sum
-    sql: ${users_with_submissions} ;;
+    sql: ${TABLE}.users_with_submissions ;;
   }
 
   # # Define your dimensions and measures here, like this:
