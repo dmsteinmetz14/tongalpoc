@@ -68,7 +68,7 @@ view: POCuserprofile {
       p.state_province,
       p.city,
       p.Preffered_payment_method_id,
-      p.user_profile_last_updated_date
+      p.user_profile_last_updated_date,
       s.submissions
   FROM profileinfo p
     LEFT JOIN user u
