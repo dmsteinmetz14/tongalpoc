@@ -48,7 +48,7 @@ derived_table: {
     iat.control_type,
     iat.attr_name,
     sa.submission_id,
-    sa.submission_attribute_id
+    sa.submission_attribute_id,
     sa.list,
     cs.submission_id,
     cs.submission_author_id,
