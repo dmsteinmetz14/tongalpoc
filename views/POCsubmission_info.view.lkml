@@ -26,7 +26,7 @@ derived_table: {
     submission_id,
     attribute_id as submission_attribute_id,
     list
-  FROM tongal.submissions_attributes
+  FROM tongal.submission_attributes
   ),
 
   contest_submissions as
