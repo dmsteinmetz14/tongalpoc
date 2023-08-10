@@ -9,6 +9,7 @@ view: POCuserprofile {
       user_id,
       last_name,
       first_name,
+      created,
       birthday,
       CASE
         WHEN (LEFT(birthday,4) + 17) >= 2022 THEN "11-17"
@@ -53,6 +54,7 @@ view: POCuserprofile {
       c.country_name,
       p.last_name,
       p.first_name,
+      p.created
       p.birthday,
       p.age_tier,
       p.state_province,
@@ -126,6 +128,12 @@ view: POCuserprofile {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.user_profile_last_updated_date ;;
+  }
+
+  dimension_group: created {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    sql: ${TABLE}.created_at ;;
   }
 
   measure: user_count {
