@@ -50,7 +50,6 @@ derived_table: {
     sa.submission_id,
     sa.submission_attribute_id,
     sa.list,
-    cs.submission_id,
     cs.submission_author_id,
     cs.contest_phase_id,
     cs.submitted,
