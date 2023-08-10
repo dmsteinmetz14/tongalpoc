@@ -70,6 +70,8 @@ explore: greenlights {}
 
 explore: submissions_by_users {}
 
+explore: project_goals {}
+
 
 # # Select the views that should be a part of this model,
 # # and define the joins that connect them together.
