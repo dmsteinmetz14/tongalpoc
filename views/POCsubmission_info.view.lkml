@@ -68,6 +68,69 @@ derived_table: {
 
     ;;
 }
+
+
+dimension: attribute_id {
+  type: string
+  sql: ${TABLE}.attribute_id ;;
+}
+
+  dimension: attr_value {
+    type: string
+    sql: ${TABLE}.attr_value ;;
+  }
+
+  dimension: control_type {
+    type: string
+    sql: ${TABLE}.control_type ;;
+  }
+
+  dimension: attr_name {
+    type: string
+    sql: ${TABLE}.attr_name ;;
+  }
+
+  dimension: submission_id {
+    type: string
+    sql: ${TABLE}.submission_id ;;
+  }
+
+  dimension: submission_attribute_id {
+    type: string
+    sql: ${TABLE}.submission_attribute_id ;;
+  }
+
+  dimension: list {
+    type: string
+    sql: ${TABLE}.list ;;
+  }
+
+  dimension: contest_phase_id {
+    type: string
+    sql: ${TABLE}.contest_phase_id ;;
+  }
+
+  dimension: submitted {
+    type: string
+    sql: ${TABLE}.submitted ;;
+  }
+
+  dimension_group:submit_date  {
+    type:  time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    sql: ${TABLE}.submit_date ;;
+  }
+
+  dimension: file_type {
+    type: string
+    sql: ${TABLE}.filte_type ;;
+  }
+
+  measure: number_of_views {
+    type: sum
+    sql:  ${TABLE}.number_of_views ;;
+  }
+
   # # Define your dimensions and measures here, like this:
   # dimension: user_id {
   #   description: "Unique ID for each user that has ordered"
