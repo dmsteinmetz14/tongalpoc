@@ -58,7 +58,7 @@ derived_table: {
     cs.number_of_views,
     cs.file_type
   FROM
-    item_attributes ia
+    item_attribute ia
       LEFT JOIN item_attribute_type iat
       ON ia.attribute_type_id = iat.attribute_type_id
       LEFT JOIN (submission_attributes sa
